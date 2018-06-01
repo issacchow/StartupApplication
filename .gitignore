@@ -1,5 +1,4 @@
-SpringTest/.idea
-SpringBootTest/.idea
+.idea
 *.iml
 */target/*
 
