@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:reg="http://www.dangdang.com/schema/ddframe/reg"
+    xmlns:job="http://www.dangdang.com/schema/ddframe/job"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.dangdang.com/schema/ddframe/reg
+                        http://www.dangdang.com/schema/ddframe/reg/reg.xsd
+                        http://www.dangdang.com/schema/ddframe/job
+                        http://www.dangdang.com/schema/ddframe/job/job.xsd
+                        ">
+    <!-- 注册中心 -->
+    <reg:zookeeper id="regCenter" 
+    				server-lists="localhost:2182"
+    				namespace="myNamespace"
+    				base-sleep-time-milliseconds="1000" 
+    				max-sleep-time-milliseconds="3000" 
+    				max-retries="3" />
+
+    <!-- 每天10:00提示用户退房 -->
+    <job:simple id="myJob001" class="springboot.job.MyJob001"
+    			registry-center-ref="regCenter" 
+    			cron="0/5 * * * * ?"
+    			sharding-total-count="1" 
+    			monitor-execution="true" 
+    			monitor-port="-1" 
+    			failover="false" 
+    			overwrite="true" 
+    			misfire="false" 
+    			description="测试"/>
+
+
+
+</beans>
