@@ -3,7 +3,7 @@ package tester;
 import java.util.HashMap;
 import java.util.Map;
 
-import static springboot.util.LogUtil.log;
+import static com.isc.application.startup.util.LogUtil.log;
 
 /**
  * Created by IssacChow on 18/4/14.

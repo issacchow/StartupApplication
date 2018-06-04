@@ -3,7 +3,7 @@ package tester;
 import java.util.HashSet;
 import java.util.Set;
 
-import static springboot.util.LogUtil.log;
+import static com.isc.application.startup.util.LogUtil.log;
 
 public class HashCodeTester {
 

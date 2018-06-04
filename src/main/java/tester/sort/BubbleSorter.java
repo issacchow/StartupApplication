@@ -1,6 +1,6 @@
 package tester.sort;
 
-import static springboot.util.LogUtil.log;
+import static com.isc.application.startup.util.LogUtil.log;
 
 public class BubbleSorter
 {

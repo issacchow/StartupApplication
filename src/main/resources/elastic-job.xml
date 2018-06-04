@@ -19,7 +19,7 @@
     				max-retries="3" />
 
     <!-- 每天10:00提示用户退房 -->
-    <job:simple id="myJob001" class="springboot.job.MyJob001"
+    <job:simple id="myJob001" class="com.isc.application.startup.job.MyJob001"
     			registry-center-ref="regCenter" 
     			cron="0/5 * * * * ?"
     			sharding-total-count="1" 
