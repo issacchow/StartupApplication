@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>isc.springboot</groupId>
-    <artifactId>StartupApplication</artifactId>
+    <artifactId>SpringCloudApplication</artifactId>
     <version>1.0</version>
 
 
@@ -82,6 +82,12 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+
         </plugins>
 
         <!--将src目录里的xml文件编译进class下-->
@@ -91,6 +97,15 @@
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
+            </resource>
+
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <targetPath>${build.directory}/classes/resources</targetPath>
             </resource>
         </resources>
     </build>
