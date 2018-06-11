@@ -1,13 +1,12 @@
 package com.isc.application.startup.config.job;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 
 /**
  * Created by IssacChow on 18/5/31.
  */
 @Configuration
-@ImportResource("classpath:elastic-job.xml")
+//@ImportResource("classpath:elastic-job.xml")
 public class ElasticJobConfig {
 
 //    @Bean
