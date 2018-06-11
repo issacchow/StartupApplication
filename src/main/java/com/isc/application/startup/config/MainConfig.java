@@ -26,14 +26,14 @@ public class MainConfig extends BeanInitLogger{
     @Bean("myBean")
     @Order(1)
     public MyBean getMyBean(){
-        log("order 2");
+//        log("order 2");
         return new MyBean();
     }
 
     @Bean("myBean2")
     @Order(2)
     public MyBean getMyBean2(){
-        log("order 1");
+//        log("order 1");
         return new MyBean();
     }
 
@@ -42,7 +42,7 @@ public class MainConfig extends BeanInitLogger{
     @Bean("testResourceBean")
     @Order(4)
     public MyBean testResource(){
-        log("myConfig==null:%s",myConfig==null);
+//        log("myConfig==null:%s",myConfig==null);
         return new MyBean();
     }
 

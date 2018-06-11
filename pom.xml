@@ -105,7 +105,6 @@
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
-                <targetPath>${build.directory}/classes/resources</targetPath>
             </resource>
         </resources>
     </build>
