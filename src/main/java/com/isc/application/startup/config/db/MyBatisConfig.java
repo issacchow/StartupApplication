@@ -39,8 +39,11 @@ public class MyBatisConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         PathMatchingResourcePatternResolver resourceLoader = new PathMatchingResourcePatternResolver();
 
+        String packageName = DALMarker.class.getPackage().getName();
+        packageName = packageName.replaceAll("\\.","/");
+        packageName += "/**/*Mapper.xml";
         bean.setMapperLocations(
-                resourceLoader.getResources("classpath:springboot/dal/**/*Mapper.xml")
+                resourceLoader.getResources("classpath:"+ packageName)
         );
         bean.setDataSource(dataSource);
         //bean.setConfigLocation(resourceLoader.getResource("classpath:mybatis-config.xml"));
